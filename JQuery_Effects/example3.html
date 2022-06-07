@@ -42,11 +42,29 @@
     </nav>
     
     <div id="box"></div>
+
+	<!-- You can use the ease in plug in to add more functionality -->
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <script>
-        
+
+		$("#fadeoutbox").click(function(){
+			$("#box").fadeOut('fast')
+		}) ;
+
+		$("#fadeinbox").click(function(){
+			$("#box").fadeIn(3000, "swing", function(){alert("Faded")})
+		}) ;
+
+		$("#fadeto20box").click(function(){
+			$("#box").fadeTo(3000, 0.2) ;
+		}) ;
+
+		$("#fadeto100box").click(function(){
+			$("#box").fadeTo(3000, 1) ;
+		}) ;
+ 
     </script>
 
 </body>

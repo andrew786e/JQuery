@@ -30,6 +30,8 @@
 			background:#4C90D8; 
 			padding:20px;
 			color:#fff; 
+			position: absolute ;
+			left: 50px ;
 		}
 
 	</style>
@@ -52,8 +54,41 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+	<!-- Note it is better to use css functions than the Jquery animation functions because
+	    Javascript uses the cpu to run the funtions while css uses the gpu -->
     <script>
-        
+
+		// Increase the size of the box
+		$("#growbox").click(function(){
+			$('#box').animate({width : '710px'}) ;
+		}) ;
+
+		
+		// Increases the font size in the box
+		$("#growtext").click(function(){
+			$("#box").animate({fontSize: "24px"}) ;
+		}) ;
+
+
+		// Shifts the box from the left 300px
+		$("#movebox").click(function(){
+			$("#box").animate({left: "+=300px"}, 5000)
+		}) ;
+
+
+		// Does the three functions above simultaeniously
+
+		$("#doall").click(function(){
+			$("#box").animate({width: "710px" , fontSize: "24px" , left: "+=300px"}, 1500) ;
+		})
+
+		$("#sequence").click(function(){
+			$("#box").animate({width: '710px'} , 1500, function(){
+				$("#box").animate({fontSize: "24px"}, 1500 , function(){
+					$("#box").animate({left: "+=300px"}, 1500) 
+				}) ;
+			}) ;
+		})
     </script>
 
 </body>
