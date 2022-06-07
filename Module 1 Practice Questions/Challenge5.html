@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 5</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <p>don't change this paragraph</p>
+    <div id="main">
+        <p>don't change this paragraph</p>
+        <p>don't change this paragraph</p>
+        <p>Change this last paragraph</p>
+    </div>
+    <script>
+
+        var answer = document.querySelectorAll('#main p') ;
+        var Num_kids = answer.length - 1 ;
+
+        answer[Num_kids].style.fontSize = '36px' ;
+
+
+        // Another way of selecting the last child in a dom
+
+        // var lastPara = document.querySelector('#main p:last-of-type') ; 
+
+        // lastPara.style.color = "red" ;
+
+        // Either of the two works
+        $('#main p:last').css('color', 'green') ;
+        $('#main p ').last().css('color' , 'purple') ;
+
+
+    </script>
+</body>
+</html>
