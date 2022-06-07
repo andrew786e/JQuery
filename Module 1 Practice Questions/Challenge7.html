@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 5</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <p>don't change this paragraph</p>
+    <div id="main">
+        <p>Here is paragraph one</p>
+        <p>Here is paragraph two</p>
+        <p>Here is paragraph three</p>
+        <p>Here is paragraph four</p>
+        <p>Here is paragraph five</p>
+        <p>Here is paragraph six</p>
+        <p>Here is paragraph seven</p>
+        <p>Here is paragraph eight</p>
+        <p>Here is paragraph nine</p>
+        <p>Here is paragraph ten</p>
+        <p>Here is paragraph eleven</p>
+        <p>Here is paragraph twelve</p>
+    </div>
+    <script>
+        
+
+        var every_other = document.querySelectorAll('#main p:nth-child(even)') ;
+
+        // var every_other = document.querySelectorAll('#main p:nth-of-type(even)') ;
+
+        console.log(every_other) ;
+
+        for(var i = 0 ; i < every_other.length ; i++){
+            every_other[i].style.fontSize = "36px" ;
+        }
+
+        // Note acts wierldly odd function gives the even elements in the dom
+
+        $('#main p').odd().css('color' , 'red') ;
+
+        console.log($("#main p").even())
+
+    </script>
+</body>
+</html>
